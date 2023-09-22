@@ -88,7 +88,7 @@ class SiderSection extends React.Component {
                             <Menu.Item key="3" style={ customMenuItem } >
                                 <Icon type="line-chart" />
                                 <span>LiquidHallMark</span>
-                                <Link to="/qcdashboard/liquidhallmark"></Link>
+                                <Link to="/qc_dashboard/liquidhallmark"></Link>
                             k</Menu.Item>
                         </StyledSubMenu >
                         <StyledSubMenu
@@ -130,17 +130,18 @@ class SiderSection extends React.Component {
                             <Menu.Item key="7" style={ customMenuItem } >
                                 <Icon type="bg-colors" />
                                 <span>Samples</span>
-                                <Link to="/samplesheet/samples"></Link>
+                                <Link to="/sample_sheet/samples"></Link>
                             </Menu.Item>
                             <Menu.Item key="8" style={ customMenuItem } >
                                 <Icon type="table" />
                                 <span>Sample Sheet</span>
-                                <Link to="/samplesheet/samplesheet"></Link>
+                                <Link to="/sample_sheet/sheet"></Link>
                                 </Menu.Item>
                         </StyledSubMenu>
                         <Menu.Item key="9">
                             <Icon type="tags" />
                             <span>Analysis</span>
+                            <Link to="/analysis"></Link>
                         </Menu.Item>
 
                         <StyledSubMenu
@@ -152,8 +153,16 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="10" style={ customMenuItem } ><Icon type="file-text" />Generating</Menu.Item>
-                            <Menu.Item key="11" style={ customMenuItem } > <Icon type="file-search" />Clinical Trial</Menu.Item>
+                            <Menu.Item key="10" style={ customMenuItem } >
+                                <Icon type="file-text" />
+                                <span>Generating</span>
+                                <Link to="/report"></Link>
+                            </Menu.Item>
+                            <Menu.Item key="11" style={ customMenuItem } > 
+                                <Icon type="file-search" />
+                                <span>Clinical Trial</span>
+                                <Link to="/report/clinical_trail"></Link>
+                            </Menu.Item>
                         </StyledSubMenu>
                         <Menu.Item key="12">
                             <Icon type="file-search" />

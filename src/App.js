@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Layout } from 'antd';
+import { Layout, Card } from 'antd';
 import HeaderSection from './components/HeaderSection';
 import FooterSection from './components/FooterSection';
 import SiderSection from './components/SiderSection';
@@ -14,6 +14,10 @@ import PhysicianInfo from './components/PhysicianInfo';
 import LiquidHallMark from './components/LiquidHallMark';
 import Samples from './components/Samples';
 import SampleSheet from './components/SampleSheet';
+import Analysis from './components/Analysis';
+import Generating from './components/Generating';
+import ClinicalTrail from './components/ClinicalTrial';
+import BreadCrumb from './components/BreadCrumb';
 
 const {Content} = Layout;
 
@@ -28,18 +32,24 @@ class App extends React.Component{
               <Layout>
                 <HeaderSection />
                 <Content style={{margin: "24px 16px 0px", minHeight: "100vh", height:"100%"}}>
+                  <BreadCrumb />
+                  <Card style={{ minHeight: "100vh", height:"100%" }}>
                   <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/dashboard" component={Dashboard} />
                   <Route exact path="/sample" component={Sample} />
-                  <Route exact path="/qcdashboard/liquidhallmark" component={LiquidHallMark} />
+                  <Route exact path="/qc_dashboard/liquidhallmark" component={LiquidHallMark} />
                   <Route exact path="/order/all" component={OrderList} />
                   <Route exact path="/order/external" component={ExternalOrder} />
                   <Route exact path="/order/physician" component={PhysicianInfo} />
-                  <Route exact path="/samplesheet/samples" component={Samples} />
-                  <Route exact path="/samplesheet/samplesheet" component={SampleSheet} />
+                  <Route exact path="/sample_sheet/samples" component={Samples} />
+                  <Route exact path="/sample_sheet/sheet" component={SampleSheet} />
+                  <Route exact path="/analysis" component={Analysis} />
+                  <Route exact path="/report" component={Generating} />
+                  <Route exact path="/report/clinical_trail" component={ClinicalTrail} />
                   
                   </Switch>
+                  </Card>
                   </Content>
            
                 
