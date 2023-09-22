@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 const { Sider } = Layout;
 const {SubMenu} = Menu;
 
@@ -29,7 +30,13 @@ const StyledSubMenu = styled(SubMenu)`
     .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::before,
     .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::after {
     background: white !important;
-    }    
+    } 
+    
+    &.ant-menu-submenu-selected {
+        .ant-menu-submenu-title {
+          color: white; /* Change the text color when selected */
+        }
+      }
 
 `
  const customMenuItem = {
@@ -50,7 +57,6 @@ class SiderSection extends React.Component {
     render() {
         return (
             <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }}>
-             
 
                     <div style={ logo }>
                         {/* <div  style={{ marginTop: "20px", marginLeft: "30px"  }}> */}
@@ -58,18 +64,17 @@ class SiderSection extends React.Component {
                             <span style={{ fontSize: "80%", color: "rgb(255, 255, 255)" }}>UNTZU</span>
                         {/* </div> */}
                     </div> 
-              
-
-
 
                     <StyledMenu defaultSelectedKeys={['1']} mode="inline">
                         <Menu.Item key="1">
                             <Icon type="dashboard" />
                             <span>Dashboard</span>
+                            <Link to="/dashboard"></Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Icon type="pie-chart" />
                             <span>Sample</span>
+                            <Link to="/sample"></Link>
                         </Menu.Item>
                         <StyledSubMenu 
                             key="sub1"
@@ -80,7 +85,11 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="3" style={ customMenuItem } ><Icon type="line-chart" />LiquidHallMark</Menu.Item>
+                            <Menu.Item key="3" style={ customMenuItem } >
+                                <Icon type="line-chart" />
+                                <span>LiquidHallMark</span>
+                                <Link to="/qcdashboard/liquidhallmark"></Link>
+                            k</Menu.Item>
                         </StyledSubMenu >
                         <StyledSubMenu
                             key="sub2"
@@ -92,9 +101,21 @@ class SiderSection extends React.Component {
                             }
                         >
                      
-                            <Menu.Item key="4" style={ customMenuItem }><Icon type="file-text" />Order list</Menu.Item>
-                            <Menu.Item key="5" style={ customMenuItem }> <Icon type="file-text" />External Order</Menu.Item>
-                            <Menu.Item key="6" style={ customMenuItem }><Icon type="usergroup-delete" />Physical Info</Menu.Item>
+                            <Menu.Item key="4" style={ customMenuItem }>
+                                <Icon type="file-text" />
+                                <span>Order list</span>
+                                <Link to="/order/all"></Link>
+                                </Menu.Item>
+                            <Menu.Item key="5" style={ customMenuItem }> 
+                                <Icon type="file-text" />
+                                <span>External Order</span>
+                                <Link to="/order/external"></Link>
+                            </Menu.Item>
+                            <Menu.Item key="6" style={ customMenuItem }>
+                                <Icon type="usergroup-delete" />
+                                <span>Physician Info </span>
+                                <Link to="/order/physician"></Link>
+                                </Menu.Item>
                    
                         </StyledSubMenu>
                         <StyledSubMenu
@@ -106,8 +127,16 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="7" style={ customMenuItem } ><Icon type="bg-colors" />Samples</Menu.Item>
-                            <Menu.Item key="8" style={ customMenuItem } ><Icon type="table" />Sample Sheet</Menu.Item>
+                            <Menu.Item key="7" style={ customMenuItem } >
+                                <Icon type="bg-colors" />
+                                <span>Samples</span>
+                                <Link to="/samplesheet/samples"></Link>
+                            </Menu.Item>
+                            <Menu.Item key="8" style={ customMenuItem } >
+                                <Icon type="table" />
+                                <span>Sample Sheet</span>
+                                <Link to="/samplesheet/samplesheet"></Link>
+                                </Menu.Item>
                         </StyledSubMenu>
                         <Menu.Item key="9">
                             <Icon type="tags" />
