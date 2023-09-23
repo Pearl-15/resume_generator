@@ -54,6 +54,8 @@ const logo = {
 
 
 class SiderSection extends React.Component {
+
+    
     render() {
         return (
             <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }}>
