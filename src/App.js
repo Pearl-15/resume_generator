@@ -19,48 +19,45 @@ import Generating from './components/Generating';
 import ClinicalTrail from './components/ClinicalTrial';
 import BreadCrumb from './components/BreadCrumb';
 
-const {Content} = Layout;
+const { Content } = Layout;
+// Testing Git
 
-class App extends React.Component{
+class App extends React.Component {
 
-    render(){
-      return(
-        <div>  
-          <Router>
+  render() {
+    return (
+      <div>
+        <Router>
+          <Layout>
+            <SiderSection />
             <Layout>
-              <SiderSection />
-              <Layout>
-                <HeaderSection />
-                <Content style={{margin: "24px 16px 0px", minHeight: "100vh", height:"100%"}}>
-                  <BreadCrumb />
-                  <Card style={{ minHeight: "100vh", height:"100%" }}>
+              <HeaderSection />
+              <Content style={{ margin: "24px 16px 0px", minHeight: "100vh", height: "100%" }}>
+                <BreadCrumb />
+                <Card style={{ minHeight: "100vh", height: "100%" }}>
                   <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/dashboard" component={Dashboard} />
-                  <Route exact path="/sample" component={Sample} />
-                  <Route exact path="/qc_dashboard/liquidhallmark" component={LiquidHallMark} />
-                  <Route exact path="/order/all" component={OrderList} />
-                  <Route exact path="/order/external" component={ExternalOrder} />
-                  <Route exact path="/order/physician" component={PhysicianInfo} />
-                  <Route exact path="/sample_sheet/samples" component={Samples} />
-                  <Route exact path="/sample_sheet/sheet" component={SampleSheet} />
-                  <Route exact path="/analysis" component={Analysis} />
-                  <Route exact path="/report" component={Generating} />
-                  <Route exact path="/report/clinical_trail" component={ClinicalTrail} />
-                  
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/sample" component={Sample} />
+                    <Route exact path="/qc_dashboard/liquidhallmark" component={LiquidHallMark} />
+                    <Route exact path="/order/all" component={OrderList} />
+                    <Route exact path="/order/external" component={ExternalOrder} />
+                    <Route exact path="/order/physician" component={PhysicianInfo} />
+                    <Route exact path="/sample_sheet/samples" component={Samples} />
+                    <Route exact path="/sample_sheet/sheet" component={SampleSheet} />
+                    <Route exact path="/analysis" component={Analysis} />
+                    <Route exact path="/report" component={Generating} />
+                    <Route exact path="/report/clinical_trail" component={ClinicalTrail} />
                   </Switch>
-                  </Card>
-                  </Content>
-           
-                
-                
-                <FooterSection />
-              </Layout>
+                </Card>
+              </Content>
+              <FooterSection />
             </Layout>
-          </Router> 
-        </div>
-      )
-    }
- }
+          </Layout>
+        </Router>
+      </div>
+    )
+  }
+}
 
 export default App;
