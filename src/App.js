@@ -24,14 +24,24 @@ const { Content } = Layout;
 
 class App extends React.Component {
 
+  state = {
+    collapsed: false,
+  };
+
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
+
   render() {
     return (
-      <div>
+
         <Router>
           <Layout>
-            <SiderSection />
+            {!this.state.collapsed && (<SiderSection trigger={null} collapsible collapsed={this.state.collapsed}/>)}
             <Layout>
-              <HeaderSection />
+              <HeaderSection type={this.state.collapsed} onClick={this.toggle}/>
               <Content style={{ margin: "24px 16px 0px", minHeight: "100vh", height: "100%" }}>
                 <BreadCrumb />
                 <Card style={{ minHeight: "100vh", height: "100%" }}>
@@ -55,7 +65,6 @@ class App extends React.Component {
             </Layout>
           </Layout>
         </Router>
-      </div>
     )
   }
 }

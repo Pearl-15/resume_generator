@@ -58,7 +58,7 @@ class SiderSection extends React.Component {
     
     render() {
         return (
-            <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }}>
+            <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }} trigger={this.props.trigger} collapsible collapsed={this.props.collapsed}>
 
                     <div style={ logo }>
                         {/* <div  style={{ marginTop: "20px", marginLeft: "30px"  }}> */}
