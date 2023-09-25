@@ -8,19 +8,8 @@ const { Header } = Layout;
 
 class HeaderSection extends React.Component {
 
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         isMenuFold: false,
-    //     }
-    // }
-
     handleMenuFold = () => {
-        // this.setState({
-        //     isMenuFold: !this.state.isMenuFold,
-        // })
         this.props.onClick();
-
     }
     render() {
         return (
@@ -38,12 +27,6 @@ class HeaderSection extends React.Component {
                         </>
                         : 
                         <Icon type="menu-fold" style={{fontSize: "21px", textAlign:"left"}} onClick={this.handleMenuFold}/>}
-
-                        {/* <Icon
-                            type={this.props.type ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.handleMenuFold}
-                            style={{fontSize: "21px", textAlign:"left"}}
-                        /> */}
                     </Col>
 
                     <Col span={10}>
