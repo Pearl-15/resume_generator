@@ -42,15 +42,12 @@ class BreadCrumb extends React.Component {
                         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
                         
 
-                        return (<Breadcrumb.Item>
+                        return (<Breadcrumb.Item key={index}>
                             <Link to={`${routeTo}`}>{this.toTitleCase(name)}</Link>
                         </Breadcrumb.Item>)
                     })}
 
                 </Breadcrumb>
-
-
-
 
 
 

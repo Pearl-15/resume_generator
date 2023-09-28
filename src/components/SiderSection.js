@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 const { Sider } = Layout;
 const {SubMenu} = Menu;
 
@@ -51,12 +51,92 @@ const logo = {
     fontWeight: "600",
   }
 
+  
+  
+
+  //////////// New added
+  const customActiveLinkStyle = {
+    backgroundColor: 'transparent',
+    color: '#FFFFFFA6',
+    fontSize: '20px',
+    fontWeight: 'bold',
+  };
+  
+  // Merge with any additional styles you want for active links
+  const activeLinkStyles = {
+    ...customActiveLinkStyle,
+    backgroundColor: '#1890ff',
+    color: 'white',
+  };
+
+  function isActive(path, key) {
+    const currentPath = window.location.pathname;
+  
+    if (currentPath === path) {
+        console.log("currentPath Key is ", key)
+      return key;
+    } else {
+      return customActiveLinkStyle; // Use the customActiveLinkStyle for non-active links
+    }
+  }
+  
+
 
 
 class SiderSection extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.state ={
+            selectedKey:''
+        }
+    }
+
+    componentDidMount() {
+        // Call updateSelectedKey in componentDidMount to set the initial selected key
+        const { history, location: { pathname } } = this.props;
+        console.log("sidebar pathname ", pathname)
+
+        this.updateSelectedKey(pathname);
+      }
+    
+      componentDidUpdate(prevProps) {
+        // Check if the URL location has changed and update the selected menu item
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+          this.updateSelectedKey(this.props.location.pathname);
+        }
+      }
+
+    updateSelectedKey= (pathname)=> {
+
+        const menuItems = [
+            { key: "1", path: "/dashboard" },
+            { key: "2", path: "/sample" },
+            { key: "3", path: "/qc_dashboard/liquidhallmark" },
+            { key: "4", path: "/order/all" },
+            { key: "5", path: "/order/external" },
+            { key: "6", path: "/order/physician" },
+            { key: "7", path: "/sample_sheet/samples" },
+            { key: "8", path: "/sample_sheet/sheet" },
+            { key: "9", path: "/analysis" },
+            { key: "10", path: "/report" },
+            { key: "11", path: "/report/clinical_trail" },
+         
+          ];
+        
+        menuItems.find((item)=>{
+            if(pathname === item.path){
+             this.setState({
+                 selectedKey: item.key
+             })
+           
+            }
+         })
+         
+    }
     
     render() {
+
         return (
             <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }} trigger={this.props.trigger} collapsible collapsed={this.props.collapsed}>
 
@@ -67,7 +147,7 @@ class SiderSection extends React.Component {
                         {/* </div> */}
                     </div> 
 
-                    <StyledMenu defaultSelectedKeys={['1']} mode="inline">
+                    <StyledMenu mode="inline" selectedKeys={[this.state.selectedKey]}>
                         <Menu.Item key="1">
                             <Icon type="dashboard" />
                             <span>Dashboard</span>
@@ -76,7 +156,7 @@ class SiderSection extends React.Component {
                         <Menu.Item key="2">
                             <Icon type="pie-chart" />
                             <span>Sample</span>
-                            <Link to="/sample"></Link>
+                            <Link to="/sample"></Link>                            
                         </Menu.Item>
                         <StyledSubMenu 
                             key="sub1"
@@ -194,4 +274,4 @@ class SiderSection extends React.Component {
     }
 }
 
-export default SiderSection;
+export default withRouter(SiderSection);
