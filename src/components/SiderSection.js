@@ -88,7 +88,7 @@ class SiderSection extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            selectedKey:''
+            selectedPath:''
         }
     }
 
@@ -107,32 +107,10 @@ class SiderSection extends React.Component {
         }
       }
 
-    updateSelectedKey= (pathname)=> {
-
-        const menuItems = [
-            { key: "1", path: "/dashboard" },
-            { key: "2", path: "/sample" },
-            { key: "3", path: "/qc_dashboard/liquidhallmark" },
-            { key: "4", path: "/order/all" },
-            { key: "5", path: "/order/external" },
-            { key: "6", path: "/order/physician" },
-            { key: "7", path: "/sample_sheet/samples" },
-            { key: "8", path: "/sample_sheet/sheet" },
-            { key: "9", path: "/analysis" },
-            { key: "10", path: "/report" },
-            { key: "11", path: "/report/clinical_trail" },
-         
-          ];
-        
-        menuItems.find((item)=>{
-            if(pathname === item.path){
-             this.setState({
-                 selectedKey: item.key
-             })
-           
-            }
-         })
-         
+    updateSelectedKey= (pathname)=> {       
+        this.setState({
+            selectedKey: pathname
+        })         
     }
     
     render() {
@@ -148,12 +126,12 @@ class SiderSection extends React.Component {
                     </div> 
 
                     <StyledMenu mode="inline" selectedKeys={[this.state.selectedKey]}>
-                        <Menu.Item key="1">
+                        <Menu.Item key="/dashboard">
                             <Icon type="dashboard" />
                             <span>Dashboard</span>
                             <Link to="/dashboard"></Link>
                         </Menu.Item>
-                        <Menu.Item key="2">
+                        <Menu.Item key="/sample">
                             <Icon type="pie-chart" />
                             <span>Sample</span>
                             <Link to="/sample"></Link>                            
@@ -167,7 +145,7 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="3" style={ customMenuItem } >
+                            <Menu.Item key="/qc_dashboard/liquidhallmark" style={ customMenuItem } >
                                 <Icon type="line-chart" />
                                 <span>LiquidHallMark</span>
                                 <Link to="/qc_dashboard/liquidhallmark"></Link>
@@ -183,17 +161,17 @@ class SiderSection extends React.Component {
                             }
                         >
                      
-                            <Menu.Item key="4" style={ customMenuItem }>
+                            <Menu.Item key="/order/all" style={ customMenuItem }>
                                 <Icon type="file-text" />
                                 <span>Order list</span>
                                 <Link to="/order/all"></Link>
                                 </Menu.Item>
-                            <Menu.Item key="5" style={ customMenuItem }> 
+                            <Menu.Item key="/order/external" style={ customMenuItem }> 
                                 <Icon type="file-text" />
                                 <span>External Order</span>
                                 <Link to="/order/external"></Link>
                             </Menu.Item>
-                            <Menu.Item key="6" style={ customMenuItem }>
+                            <Menu.Item key="/order/physician" style={ customMenuItem }>
                                 <Icon type="usergroup-delete" />
                                 <span>Physician Info </span>
                                 <Link to="/order/physician"></Link>
@@ -209,18 +187,18 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="7" style={ customMenuItem } >
+                            <Menu.Item key="/sample_sheet/samples" style={ customMenuItem } >
                                 <Icon type="bg-colors" />
                                 <span>Samples</span>
                                 <Link to="/sample_sheet/samples"></Link>
                             </Menu.Item>
-                            <Menu.Item key="8" style={ customMenuItem } >
+                            <Menu.Item key="/sample_sheet/sheet" style={ customMenuItem } >
                                 <Icon type="table" />
                                 <span>Sample Sheet</span>
                                 <Link to="/sample_sheet/sheet"></Link>
                                 </Menu.Item>
                         </StyledSubMenu>
-                        <Menu.Item key="9">
+                        <Menu.Item key="/analysis">
                             <Icon type="tags" />
                             <span>Analysis</span>
                             <Link to="/analysis"></Link>
@@ -235,12 +213,12 @@ class SiderSection extends React.Component {
                                 </span>
                             }
                         >
-                            <Menu.Item key="10" style={ customMenuItem } >
+                            <Menu.Item key="/report" style={ customMenuItem } >
                                 <Icon type="file-text" />
                                 <span>Generating</span>
                                 <Link to="/report"></Link>
                             </Menu.Item>
-                            <Menu.Item key="11" style={ customMenuItem } > 
+                            <Menu.Item key="/report/clinical_trail" style={ customMenuItem } > 
                                 <Icon type="file-search" />
                                 <span>Clinical Trial</span>
                                 <Link to="/report/clinical_trail"></Link>
