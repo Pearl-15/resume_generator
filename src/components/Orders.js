@@ -1,15 +1,15 @@
 import React from 'react';
 
-class SampleSheet extends React.Component {
+class Orders extends React.Component {
     render() {
         return (
          
             <div>
-               SampleSheet .... 
+               Order Table .... 
             </div>
                 
         );
     }
 }
 
-export default SampleSheet;
+export default Orders;

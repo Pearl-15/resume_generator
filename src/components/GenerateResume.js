@@ -1,15 +1,15 @@
 import React from 'react';
 
-class ClinicalTrail extends React.Component {
+class GenerateResume extends React.Component {
     render() {
         return (
          
             <div>
-                Clinical Trail ...
+                Generate Resume ... 
             </div>
                 
         );
     }
 }
 
-export default ClinicalTrail;
+export default GenerateResume;

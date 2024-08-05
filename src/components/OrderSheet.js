@@ -1,15 +1,15 @@
 import React from 'react';
 
-class PhysicianInfo extends React.Component {
+class OrderSheet extends React.Component {
     render() {
         return (
          
             <div>
-               Physician Info.... 
+               OrderSheet .... 
             </div>
                 
         );
     }
 }
 
-export default PhysicianInfo ;
+export default OrderSheet;

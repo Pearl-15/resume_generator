@@ -119,131 +119,37 @@ class SiderSection extends React.Component {
             <Sider style={{ backgroundColor: "rgb(60, 66, 72)" }} trigger={this.props.trigger} collapsible collapsed={this.props.collapsed}>
 
                     <div style={ logo }>
-                        {/* <div  style={{ marginTop: "20px", marginLeft: "30px"  }}> */}
-                            <span style={{ fontSize: "100%", color: "rgb(246, 137, 28)" }}>S</span>
-                            <span style={{ fontSize: "80%", color: "rgb(255, 255, 255)" }}>UNTZU</span>
-                        {/* </div> */}
+                            <span style={{ fontSize: "100%", color: "rgb(246, 137, 28)" }}>Resume</span>
+                            <span style={{ fontSize: "80%", color: "rgb(255, 255, 255)" }}> G</span>
                     </div> 
 
                     <StyledMenu mode="inline" selectedKeys={[this.state.selectedKey]}>
-                        <Menu.Item key="/dashboard">
-                            <Icon type="dashboard" />
-                            <span>Dashboard</span>
-                            <Link to="/dashboard"></Link>
-                        </Menu.Item>
-                        <Menu.Item key="/sample">
-                            <Icon type="pie-chart" />
-                            <span>Sample</span>
-                            <Link to="/sample"></Link>                            
-                        </Menu.Item>
-                        <StyledSubMenu 
-                            key="sub1"
-                            title={
-                                <span>
-                                    <Icon type="area-chart" />
-                                    <span>QC Dashboard</span>
-                                </span>
-                            }
-                        >
-                            <Menu.Item key="/qc_dashboard/liquidhallmark" style={ customMenuItem } >
-                                <Icon type="line-chart" />
-                                <span>LiquidHallMark</span>
-                                <Link to="/qc_dashboard/liquidhallmark"></Link>
-                            k</Menu.Item>
-                        </StyledSubMenu >
-                        <StyledSubMenu
-                            key="sub2"
-                            title={
-                                <span>
-                                    <Icon type="profile" />
-                                    <span>Order</span>
-                                </span>
-                            }
-                        >
-                     
-                            <Menu.Item key="/order/all" style={ customMenuItem }>
-                                <Icon type="file-text" />
-                                <span>Order list</span>
-                                <Link to="/order/all"></Link>
-                                </Menu.Item>
-                            <Menu.Item key="/order/external" style={ customMenuItem }> 
-                                <Icon type="file-text" />
-                                <span>External Order</span>
-                                <Link to="/order/external"></Link>
-                            </Menu.Item>
-                            <Menu.Item key="/order/physician" style={ customMenuItem }>
-                                <Icon type="usergroup-delete" />
-                                <span>Physician Info </span>
-                                <Link to="/order/physician"></Link>
-                                </Menu.Item>
-                   
-                        </StyledSubMenu>
                         <StyledSubMenu
                             key="sub3"
                             title={
                                 <span>
                                     <Icon type="bg-colors" />
-                                    <span>Sample Sheet</span>
+                                    <span>Order</span>
                                 </span>
                             }
                         >
-                            <Menu.Item key="/sample_sheet/samples" style={ customMenuItem } >
+                            <Menu.Item key="/orders" style={ customMenuItem } >
                                 <Icon type="bg-colors" />
-                                <span>Samples</span>
-                                <Link to="/sample_sheet/samples"></Link>
+                                <span>Order Table</span>
+                                <Link to="/orders"></Link>
                             </Menu.Item>
-                            <Menu.Item key="/sample_sheet/sheet" style={ customMenuItem } >
+                            <Menu.Item key="/ordersheet" style={ customMenuItem } >
                                 <Icon type="table" />
-                                <span>Sample Sheet</span>
-                                <Link to="/sample_sheet/sheet"></Link>
+                                <span>Order Sheet</span>
+                                <Link to="/ordersheet"></Link>
                                 </Menu.Item>
                         </StyledSubMenu>
-                        <Menu.Item key="/analysis">
+                        <Menu.Item key="/generateresume">
                             <Icon type="tags" />
-                            <span>Analysis</span>
-                            <Link to="/analysis"></Link>
+                            <span>Generate Resume</span>
+                            <Link to="/generateresume"></Link>
                         </Menu.Item>
 
-                        <StyledSubMenu
-                            key="sub4"
-                            title={
-                                <span>
-                                    <Icon type="file-text" />
-                                    <span>Report</span>
-                                </span>
-                            }
-                        >
-                            <Menu.Item key="/report" style={ customMenuItem } >
-                                <Icon type="file-text" />
-                                <span>Generating</span>
-                                <Link to="/report"></Link>
-                            </Menu.Item>
-                            <Menu.Item key="/report/clinical_trail" style={ customMenuItem } > 
-                                <Icon type="file-search" />
-                                <span>Clinical Trial</span>
-                                <Link to="/report/clinical_trail"></Link>
-                            </Menu.Item>
-                        </StyledSubMenu>
-                        <Menu.Item key="12">
-                            <Icon type="file-search" />
-                            <span>Report Review</span>
-                        </Menu.Item>
-                        <Menu.Item key="13">
-                            <Icon type="mail" />
-                            <span>Email</span>
-                        </Menu.Item>
-                        <Menu.Item key="14">
-                            <Icon type="file-text" />
-                            <span>Hallmark</span>
-                        </Menu.Item>
-                        <Menu.Item key="15">
-                            <Icon type="file-text" />
-                            <span>MCED</span>
-                        </Menu.Item>
-                        <Menu.Item key="16">
-                            <Icon type="usergroup-delete" />
-                            <span>Patient</span>
-                        </Menu.Item>
                     </StyledMenu>
 
    

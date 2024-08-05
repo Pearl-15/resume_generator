@@ -5,7 +5,7 @@ class Home extends React.Component {
         return (
          
             <div>
-               Home  .... 
+               HAHA Home  .... 
             </div>
                 
         );

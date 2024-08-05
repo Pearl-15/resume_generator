@@ -21,8 +21,8 @@ class HeaderSection extends React.Component {
                         <>
                         <Icon type="menu-unfold" style={{fontSize: "21px", textAlign:"left"}} onClick={this.handleMenuFold}/>
                         <span style={{marginLeft:"5px" }}>
-                        <span style={{fontSize: "150%", color:"rgb(246, 137, 28)"}}>S</span>
-                        <span style={{fontSize: "135%", color:"rgb(60, 66, 72)"}}>UNTZU</span>
+                        <span style={{fontSize: "150%", color:"rgb(246, 137, 28)"}}>Resume</span>
+                        <span style={{fontSize: "135%", color:"rgb(60, 66, 72)"}}> Generator</span>
                         </span>
                         </>
                         : 
@@ -33,12 +33,7 @@ class HeaderSection extends React.Component {
                         <TimeStamp />
                     </Col>
 
-
-                    <Col span={2}>
-                        Explore
-                    </Col>
-
-                    <Col span={4}>
+                    <Col span={6} style={{textAlign: 'right'}}>
                         <User />
                     </Col>
 
