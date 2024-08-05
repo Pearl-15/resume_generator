@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout, Icon, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
-import TimeStamp from './TimeStamp';
-import User from './User';
+import TimeStamp from '../TimeStamp';
+import User from '../User';
 const { Header } = Layout;
 
 
@@ -16,7 +16,7 @@ class HeaderSection extends React.Component {
             <Header style={{ background: "#ffffff", color: "rgb(118, 118, 118)", paddingLeft: "2%", marginLeft: "0px" }}>
 
                 <Row>
-                    <Col span={8}>
+                    <Col span={12}>
                         {this.props.type ? 
                         <>
                         <Icon type="menu-unfold" style={{fontSize: "21px", textAlign:"left"}} onClick={this.handleMenuFold}/>
@@ -29,11 +29,11 @@ class HeaderSection extends React.Component {
                         <Icon type="menu-fold" style={{fontSize: "21px", textAlign:"left"}} onClick={this.handleMenuFold}/>}
                     </Col>
 
-                    <Col span={10}>
+                    <Col span={8}>
                         <TimeStamp />
                     </Col>
 
-                    <Col span={6} style={{textAlign: 'right'}}>
+                    <Col span={4} style={{textAlign: 'right'}}>
                         <User />
                     </Col>
 
