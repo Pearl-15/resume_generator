@@ -4,6 +4,7 @@ import HeaderSection from "./HeaderSection";
 import FooterSection from "./FooterSection";
 import ContentSection from "./ContentSection";
 import Sidebar from "./Sidebar";
+import {withRouter} from "react-router";
 
 class MainFrame extends Component {
     constructor(props){
@@ -38,4 +39,4 @@ class MainFrame extends Component {
 
 }
 
-export default (MainFrame);
+export default withRouter((MainFrame));

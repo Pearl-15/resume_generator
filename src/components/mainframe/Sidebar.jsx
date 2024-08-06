@@ -1,5 +1,6 @@
 import { Layout, Menu, Icon } from "antd";
 import { Component } from "react";
+import {withRouter, Link} from "react-router-dom"; 
 
 const {Sider} = Layout;
 
@@ -17,7 +18,7 @@ class Sidebar extends Component {
 
         this.setState({
             current: e.key
-        }) 
+        })
         
     }
 
@@ -51,26 +52,32 @@ class Sidebar extends Component {
               <Menu.Item key="bio">
                 <Icon type="user" />
                 <span>Short Bio</span>
+                <Link to={{ pathname: "/short_bio"}}></Link>
               </Menu.Item>
               <Menu.Item key="edu_background">
                 <Icon type="trophy" />
                 <span>Education</span>
+                <Link to={{ pathname: "/edu_background"}}></Link>
               </Menu.Item>
               <Menu.Item key="work_experience">
                 <Icon type="solution" />
                 <span>Work Experience</span>
+                <Link to={{ pathname: "/work_experience"}}></Link>
               </Menu.Item>
               <Menu.Item key="skill">
                 <Icon type="build" />
                 <span>Skill</span>
+                <Link to={{ pathname: "/skill"}}></Link>
               </Menu.Item>
               <Menu.Item key="hobby">
                 <Icon type="heart" />
                 <span>Hobby</span>
+                <Link to={{ pathname: "/hobby"}}></Link>
               </Menu.Item>
               <Menu.Item key="generate_resume">
                 <Icon type="file-text" />
                 <span>Generate Resume</span>
+                <Link to={{ pathname: "/generate_resume"}}></Link>
               </Menu.Item>
             </Menu>
           </Sider>
@@ -78,4 +85,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default withRouter((Sidebar));
